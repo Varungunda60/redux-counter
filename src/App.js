@@ -1,18 +1,16 @@
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
+import { actions } from "./store";
 function App() {
   const counter = useSelector((state) => state.counter);
   const dispatch = useDispatch();
   const increaseCount = () => {
-    dispatch({
-      type: "INC",
-    });
+    dispatch(actions.increment);
   };
   const decreaseCount = () => {
-    dispatch({
-      type: "DEC",
-    });
+    dispatch(actions.decrement());
   };
+  console.log(actions);
   return (
     <div>
       <h1>Counter App</h1>
